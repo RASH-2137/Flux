@@ -1,0 +1,9 @@
+{
+  "appId": "com.flux.stream",
+  "appName": "FLUX",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  }
+}

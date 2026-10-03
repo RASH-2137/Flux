@@ -1,0 +1,20 @@
+{
+  "name": "flux",
+  "version": "1.0.0",
+  "description": "Peer-to-peer encrypted video calling, screen sharing, and ephemeral chat — built with WebRTC and Socket.io.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["webrtc", "p2p", "video-call", "socket.io", "capacitor"],
+  "author": "rahuk",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.4"
+  }
+}

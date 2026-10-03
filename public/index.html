@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>FLUX — Secure P2P Stream & Calls</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <!-- Top Bar -->
+    <header class="top-nav">
+        <div class="brand">
+            <span class="logo-dot"></span>
+            <span class="logo-text">FLUX</span>
+        </div>
+
+    </header>
+
+    <!-- Lobby Screen -->
+    <main id="lobbyScreen" class="screen active">
+        <div class="lobby-card">
+            <h1>Private Mesh</h1>
+            <p class="subtitle">Direct encrypted video calling, wireless screen share, and ephemeral chat.</p>
+
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Your Name" maxlength="15" />
+                <input type="text" id="roomInput" placeholder="6-digit Room Code" maxlength="10" />
+                <button id="joinBtn" class="btn btn-primary">Join Room</button>
+            </div>
+
+            <div class="divider"><span>OR</span></div>
+
+            <button id="createBtn" class="btn btn-secondary">Create New Room</button>
+
+            <div class="privacy-features">
+                <div class="feature-tag">⚡ Direct P2P Mesh</div>
+                <div class="feature-tag">🔒 End to End Encrypted</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Call Screen -->
+    <main id="callScreen" class="screen">
+        <!-- Call Header -->
+        <div class="call-header">
+            <div class="room-pill">
+                <span>Room:</span>
+                <strong id="displayRoomId">------</strong>
+                <button id="copyRoomBtn" title="Copy Link">📋</button>
+            </div>
+            <button id="toggleChatBtn" class="btn-icon badge-holder" title="In-Call Chat">
+                💬
+                <span class="chat-badge hidden" id="chatUnreadDot"></span>
+            </button>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="video-grid alone" id="videoGrid">
+            <!-- Remote Video -->
+            <div class="video-wrapper remote-wrapper" id="remoteWrapper">
+                <div class="avatar-circle hidden" id="remoteAvatar">
+                    <span class="avatar-initial" id="remoteInitial">P</span>
+                </div>
+                <video id="remoteVideo" autoplay playsinline></video>
+                <div class="video-label" id="remoteLabel">Peer</div>
+            </div>
+
+            <!-- Local Video -->
+            <div class="video-wrapper local-wrapper" id="localWrapper">
+                <div class="avatar-circle hidden" id="localAvatar">
+                    <span class="avatar-initial" id="localInitial">Y</span>
+                </div>
+                <video id="localVideo" autoplay playsinline muted></video>
+                <div class="video-label" id="localLabel">You</div>
+            </div>
+        </div>
+
+        <!-- Call Controls -->
+        <div class="controls-bar">
+            <button id="toggleMicBtn" class="control-btn" title="Toggle Mic">🎙️</button>
+            <button id="toggleCamBtn" class="control-btn" title="Toggle Camera">📹</button>
+            <button id="flipCamBtn" class="control-btn" title="Flip Camera">🔄</button>
+            <button id="screenShareBtn" class="control-btn" title="Share Screen">🖥️</button>
+            <button id="hangupBtn" class="control-btn btn-danger" title="Hang Up">❌</button>
+        </div>
+    </main>
+
+    <!-- Ephemeral Chat Drawer -->
+    <aside id="chatDrawer" class="chat-drawer">
+        <div class="chat-header">
+            <div class="chat-title">
+                <h3>In-Call Chat</h3>
+                <span class="tag-ephemeral">In-Memory Only</span>
+            </div>
+            <button id="closeChatBtn" class="btn-close">✕</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="system-message">
+                🔒 End to end encrypted. Messages travel directly between devices — never through a server.
+            </div>
+        </div>
+
+        <div class="chat-input-bar">
+            <input type="text" id="chatInput" placeholder="Encrypted message..." maxlength="500" />
+            <button id="sendMsgBtn" class="btn-send">➤</button>
+        </div>
+    </aside>
+</div>
+
+<script src="socket.io.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
