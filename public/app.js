@@ -1,6 +1,5 @@
-// Production signaling server URL (e.g. https://flux-mesh.onrender.com)
-// When empty, defaults to local development server.
-const PRODUCTION_SERVER = '';
+// Production signaling server URL deployed on Render
+const PRODUCTION_SERVER = 'https://flux-stream-zmdi.onrender.com';
 
 const SERVER_URL = (() => {
   const { protocol, port, origin } = window.location;

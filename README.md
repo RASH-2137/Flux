@@ -2,6 +2,8 @@
 
 A peer-to-peer encrypted video calling application built with WebRTC, Socket.io, and Capacitor. Supports browser and native Android.
 
+**Live Demo:** [https://flux-stream-zmdi.onrender.com](https://flux-stream-zmdi.onrender.com)
+
 ## Features
 
 - One-to-one video calls with end-to-end encryption (WebRTC DTLS-SRTP)
