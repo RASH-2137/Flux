@@ -2,7 +2,7 @@
 
 A peer-to-peer encrypted video calling application built with WebRTC, Socket.io, and Capacitor. Supports browser and native Android.
 
-**Live Demo:** [https://flux-stream-zmdi.onrender.com](https://vc.spacekid.xyz)
+**Live Demo:** [https://vc.spacekid.xyz](https://vc.spacekid.xyz)
 
 ## Features
 
